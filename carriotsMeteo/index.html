@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Carriots Meteo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="stylesheet" type="text/css" href="css/cloud-admin.css" >
+	<link rel="stylesheet" type="text/css"  href="css/themes/graphite.css" id="skin-switcher" >
+	<link rel="stylesheet" type="text/css"  href="css/responsive.css" >
+	<!-- STYLESHEETS --><!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<!-- ANIMATE -->
+	<link rel="stylesheet" type="text/css" href="css/animatecss/animate.min.css" />
+	<!-- DATE RANGE PICKER -->
+	<link rel="stylesheet" type="text/css" href="js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+	<!-- TODO -->
+	<link rel="stylesheet" type="text/css" href="js/jquery-todo/css/styles.css" />
+	<!-- FULL CALENDAR -->
+	<link rel="stylesheet" type="text/css" href="js/fullcalendar/fullcalendar.min.css" />
+	<!-- GRITTER -->
+	<link rel="stylesheet" type="text/css" href="js/gritter/css/jquery.gritter.css" />
+	<!-- FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+	<!-- PAGE SPECIFIC STYLES -->
+	<style type="text/css">
+		      #g1, #g2, #g3, #g4, #g5, #g6 {
+				width:100%; height:160px;
+			  }
+	</style>
+</head>
+<body>
+
+	<!-- HEADER -->
+	<header class="navbar clearfix" id="header">
+		<div class="container">
+			<div class="navbar-brand">
+				<!-- COMPANY LOGO -->
+				<a href="index.html">
+					<img src="img/logo_meteo.png" alt="Carriots Meteo" class="img-responsive" style="width: 169px;" />
+				</a>
+				<!-- /COMPANY LOGO -->
+				<!-- SIDEBAR COLLAPSE -->
+				<div id="sidebar-collapse" class="sidebar-collapse btn">
+					<i class="fa fa-bars" 
+						data-icon1="fa fa-bars" 
+						data-icon2="fa fa-bars" ></i>
+				</div>
+				<!-- /SIDEBAR COLLAPSE -->
+			</div>
+			<!-- NAVBAR LEFT -->
+			<ul class="nav navbar-nav pull-left hidden-xs" id="navbar-left">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-cog"></i>
+						<span class="name">Skins</span>
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="dropdown-menu skins">
+						<li class="dropdown-title">
+							<span><i class="fa fa-leaf"></i> Skins</span>
+						</li>
+						<li><a href="#" data-skin="graphite">Graphite (default)</a></li>
+						<li><a href="#" data-skin="default">Subtle</a></li>
+						<li><a href="#" data-skin="night">Night</a></li>
+						<li><a href="#" data-skin="earth">Earth</a></li>
+						<li><a href="#" data-skin="utopia">Utopia</a></li>
+						<li><a href="#" data-skin="nature">Nature</a></li>
+					 </ul>
+				</li>
+			</ul>
+			<!-- /NAVBAR LEFT -->
+			
+			<!-- NAVBAR RIGHT -->
+			<ul class="nav navbar-nav pull-right" style="min-width: 10px; margin-top: 6px;">
+				<li class="dropdown user">
+					<a class="dropdown-toggle" href="https://github.com/carriots/javascript_CORS_CarriotsMeteo" target="_blank">
+						<span class="username"><i class="fa fa-github"></i> Fork me on GitHub</span>
+					</a>
+				</li>
+			</ul>
+			<!-- /NAVBAR RIGHT -->
+		</div>
+	</header>
+	<!--/HEADER -->
+	
+	<!-- PAGE -->
+	<section id="page">
+				<!-- SIDEBAR -->
+				<div id="sidebar" class="sidebar">
+					<div class="sidebar-menu nav-collapse">
+						<div class="divide-20"></div>
+											
+						<!-- SIDEBAR MENU -->
+						<ul style="margin-top: 34px;">
+							<li class="active">
+								<a href="index.html">
+								<i class="fa fa-map-marker fa-fw"></i> <span class="menu-text">Madrid</span>
+								<span class="selected"></span>
+								</a>					
+							</li>
+						</ul>
+						<!-- /SIDEBAR MENU -->
+					</div>
+				</div>
+				<!-- /SIDEBAR -->
+		<div id="main-content">
+			
+			<div class="container">
+				<div class="row">
+					<div id="content" class="col-lg-12">
+						<!-- PAGE HEADER-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="page-header">
+									<!-- STYLER -->
+									
+									<!-- /STYLER -->
+									<!-- BREADCRUMBS -->
+									<ul class="breadcrumb">
+										<li>
+											<i class="fa fa-home"></i>
+											<a href="index.html">Home</a>
+										</li>
+										<li><i class="fa fa-map-marker"></i> Madrid</li>
+									</ul>
+									<!-- /BREADCRUMBS -->
+									<div class="clearfix">
+										<h3 class="content-title pull-left">Madrid</h3>
+									</div>
+									<div class="description">Actual Report, Historic and more</div>
+								</div>
+							</div>
+						</div>
+						<!-- /PAGE HEADER -->
+						
+						
+						<!--------------------------->
+						
+						<!-- DASHBOARD CONTENT -->
+						<div class="row">
+							
+							<!-- GOOGLE MAP -->
+							<div class="col-md-6">
+								<!-- BOX -->
+								<div class="box border orange">
+									<div class="box-title">
+										<h4><i class="fa fa-map-marker"></i>Meteo Station Situation</h4>
+										<div class="tools">
+											<a href="javascript:;" class="reload">
+												<i class="fa fa-refresh"></i>
+											</a>
+											<a href="javascript:;" class="collapse">
+												<i class="fa fa-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="remove">
+												<i class="fa fa-times"></i>
+											</a>
+										</div>
+									</div>
+									<div class="box-body">
+										<div id="gmap_marker" class="gmaps"></div>
+									</div>
+								</div>
+								<!-- /BOX -->
+							</div>
+							<!-- END MAP -->
+							
+							<!-- ACTUAL REPORT -->
+							<div class="col-md-6">
+								<!-- BOX -->
+								<div class="box solid grey">
+									<div class="box-title">
+										<h4><i class="fa fa-bell"></i>Actual Report</h4>
+										<div class="tools hidden-xs">
+											<span class="badge badge-green" id="last_update"></span>&nbsp;&nbsp;&nbsp;
+											<a href="javascript:;" class="collapse">
+												<i class="fa fa-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="remove">
+												<i class="fa fa-times"></i>
+											</a>
+										</div>
+									</div>
+									<div class="box-body">
+										<div style="height: 280px;">
+											<div class="box-body font-400" style="padding-top: 0px;">
+												<h2><i class="fa fa-fire"></i> Temperature: <div id="nowTemp" style="text-align: right; width: 170px; height: 40px; float: right; background: url(img/loaders/ajax-loader.gif) no-repeat 80% 50%; "></div></h2>
+												<h2><i class="fa fa-cloud"></i> Humidity: <div id="nowHumidity" style="text-align: right; width: 170px; height: 40px; float: right; background: url(img/loaders/ajax-loader.gif) no-repeat 80% 50%; "></div></h2>
+												<h2><i class="fa fa-flag"></i> Wind Speed: <div id="nowWind" style="text-align: right; width: 170px; height: 40px; float: right; background: url(img/loaders/ajax-loader.gif) no-repeat 80% 50%; "></div></h2>
+												<h2 style="float: left;"><i class="fa fa-location-arrow"></i> Wind Direction:</h2><div id="nowWinDir" style="float: right; padding: 20px 25px; width: 120px; height: 120px; background: url(img/bck_wind.png) no-repeat 0% 0%; text-align: right;"><input style="display: none;" id="knob-dyn" data-width="70" data-readOnly="true" data-cursor="true" data-fgColor="#8fc556" data-thickness=".3"  data-min="0" data-displayInput="false" data-max="360"value="0"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /BOX -->
+							</div>
+							<!-- END ACTUAL REPORT -->
+							
+							<!-- ANIMATED CHART -->
+							<div class="col-md-6">
+								<!-- BOX -->
+								<div class="box border inverse">
+									<div class="box-title">
+										<h4><i class="fa fa-location-arrow"></i>24H Wind Report</h4>
+										<div class="tools">
+											<a href="javascript:;" class="collapse">
+												<i class="fa fa-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="remove">
+												<i class="fa fa-times"></i>
+											</a>
+										</div>
+									</div>
+									<div class="box-body">
+										<div id="chart_grow1" class="chart"></div>
+									</div>
+								</div>
+								<!-- /BOX -->
+							</div>
+							<!-- /ANIMATED CHART -->
+							
+							<!-- ANIMATED CHART -->
+							<div class="col-md-6">
+								<!-- BOX -->
+								<div class="box border inverse">
+									<div class="box-title">
+										<h4><i class="fa fa-fire"></i>24H Temperature Report</h4>
+										<div class="tools">
+											<a href="javascript:;" class="collapse">
+												<i class="fa fa-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="remove">
+												<i class="fa fa-times"></i>
+											</a>
+										</div>
+									</div>
+									<div class="box-body">
+										<div id="chart_grow2" class="chart"></div>
+									</div>
+								</div>
+								<!-- /BOX -->
+							</div>
+							<!-- /ANIMATED CHART -->
+							
+							<!-- ANIMATED CHART -->
+							<div class="col-md-6">
+								<!-- BOX -->
+								<div class="box border inverse">
+									<div class="box-title">
+										<h4><i class="fa fa-cloud"></i>24H Humidity Report</h4>
+										<div class="tools">
+											<a href="javascript:;" class="collapse">
+												<i class="fa fa-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="remove">
+												<i class="fa fa-times"></i>
+											</a>
+										</div>
+									</div>
+									<div class="box-body">
+										<div id="chart_grow3" class="chart"></div>
+									</div>
+								</div>
+								<!-- /BOX -->
+							</div>
+							<!-- /ANIMATED CHART -->
+							
+							<!-- ANIMATED CHART -->
+							<div class="col-md-6">
+								<!-- BOX -->
+								<div class="box border inverse">
+									<div class="box-title">
+										<h4><i class="fa fa-sun-o"></i>24H UV Radiation</h4>
+										<div class="tools">
+											<a href="javascript:;" class="collapse">
+												<i class="fa fa-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="remove">
+												<i class="fa fa-times"></i>
+											</a>
+										</div>
+									</div>
+									<div class="box-body">
+										<div id="chart_grow4" class="chart"></div>
+									</div>
+								</div>
+								<!-- /BOX -->
+							</div>
+							<!-- /ANIMATED CHART -->
+							
+						</div>
+					    <!-- END DASHBOARD -->
+					   
+					    <!--------------------------->
+						
+					   
+						<div class="footer-tools">
+							<span class="go-top">
+								<i class="fa fa-chevron-up"></i> Top
+							</span>
+						</div>
+					</div><!-- /CONTENT-->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/PAGE -->
+	<!-- JAVASCRIPTS -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- JQUERY -->
+	<script src="js/jquery/jquery-2.0.3.min.js"></script>
+	<!-- JQUERY UI-->
+	<script src="js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<script src="bootstrap-dist/js/bootstrap.min.js"></script>
+	
+		
+	<!-- DATE RANGE PICKER -->
+	<script src="js/bootstrap-daterangepicker/moment.min.js"></script>
+	
+	<script src="js/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+	<!-- SLIMSCROLL -->
+	<script type="text/javascript" src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
+	<!-- SLIMSCROLL -->
+	<script type="text/javascript" src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script><script type="text/javascript" src="js/jQuery-slimScroll-1.3.0/slimScrollHorizontal.min.js"></script>
+	<!-- BLOCK UI -->
+	<script type="text/javascript" src="js/jQuery-BlockUI/jquery.blockUI.min.js"></script>
+	<!-- FLOT CHARTS -->
+	<script src="js/flot/jquery.flot.min.js"></script>
+	<script src="js/flot/jquery.flot.time.min.js"></script>
+    <script src="js/flot/jquery.flot.selection.min.js"></script>
+	<script src="js/flot/jquery.flot.resize.min.js"></script>
+    <script src="js/flot/jquery.flot.pie.min.js"></script>
+    <script src="js/flot/jquery.flot.stack.min.js"></script>
+    <script src="js/flot/jquery.flot.crosshair.min.js"></script>
+	<!-- FLOT GROWRAF -->
+	<script src="js/flot-growraf/jquery.flot.growraf.min.js"></script>
+	<!-- GAGE -->
+	<script src="js/justgage/js/raphael.2.1.0.min.js"></script>
+    <script src="js/justgage/js/justgage.1.0.1.min.js"></script>
+	<!-- EASY PIE CHART -->
+	<script src="js/jquery-easing/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="js/easypiechart/jquery.easypiechart.min.js"></script>
+	<!-- SPARKLINES -->
+	<script type="text/javascript" src="js/sparklines/jquery.sparkline.min.js"></script>
+	<!-- KNOB -->
+	<script type="text/javascript" src="js/jQuery-Knob/js/jquery.knob.min.js"></script>
+	<!-- COOKIE -->
+	<script type="text/javascript" src="js/jQuery-Cookie/jquery.cookie.min.js"></script>
+	<!-- GRITTER -->
+	<script type="text/javascript" src="js/gritter/js/jquery.gritter.min.js"></script>
+	<!-- GOOGLE MAPS -->
+	<script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+	<script type="text/javascript" src="js/gmaps/gmaps.min.js"></script>
+	<!-- CUSTOM SCRIPT -->
+	<script src="js/script.js"></script>
+	<script src="js/charts.js"></script>
+	<script src="js/googlemaps.js"></script>
+	<script src="js/corsTest.js"></script>
+	<script>
+		jQuery(document).ready(function() {		
+			App.setPage("index");  //Set current page
+			App.init(); //Initialise plugins and elements
+			MapsGoogle.init();
+			makeCorsRequest("GET", "http://api.carriots.com/devices/madrid@carriotsMeteo.carriotsMeteo/streams/?sort=at&order=-1");
+		});
+		$('#content').bind('resize', function(){
+            makeCorsRequest("GET", "http://api.carriots.com/devices/madrid@carriotsMeteo.carriotsMeteo/streams/?sort=at&order=-1");
+		});
+	</script>
+	<!-- /JAVASCRIPTS -->
+</body>
+</html>
