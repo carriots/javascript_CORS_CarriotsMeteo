@@ -53,7 +53,7 @@ function decodeJson(text){
     
   //Actual report
   var now=new Date(obj.result[0].at*1000);
-  now=now.getFullYear()+'-'+now.getMonth()+'-'+now.getDate()+' '+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
+  now=now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()+' '+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
   var nowTemp=obj.result[0].data.temp;
   var nowWind=obj.result[0].data.wind_speed;
   var nowHumidity=obj.result[0].data.hum;
